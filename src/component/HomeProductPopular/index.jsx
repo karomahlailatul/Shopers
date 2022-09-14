@@ -11,7 +11,8 @@ const HomeProductPopular = () => {
   // console.log(ProductPopularHome);
 
   useEffect(() => {
-    dispatch(getHomeProductPopular());
+    dispatch(getHomeProductPopular())
+    .unwrap()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
