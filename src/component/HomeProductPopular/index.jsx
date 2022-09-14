@@ -13,8 +13,7 @@ const HomeProductPopular = () => {
   useEffect(() => {
     dispatch(getHomeProductPopular())
     .unwrap()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   return (
     <Fragment>

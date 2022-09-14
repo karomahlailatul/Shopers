@@ -13,8 +13,7 @@ const HomeProductNew = () => {
   useEffect(() => {
     dispatch(getHomeProductNew())
     .unwrap()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   return (
     <Fragment>
