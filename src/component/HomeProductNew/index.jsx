@@ -12,7 +12,6 @@ const HomeProductNew = () => {
   // console.log(HomeProductNew);
   useEffect(() => {
     dispatch(getHomeProductNew())
-    .unwrap()
   }, [dispatch]);
 
   return (
