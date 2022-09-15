@@ -48,7 +48,7 @@ const SearchProduct = () => {
 
   return (
     <Fragment>
-      <section>
+      {/* <section>
         <div className="container mt-5 ">
           <div className="row-new">
             <div className="row">
@@ -141,7 +141,7 @@ const SearchProduct = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Fragment>
   );
 };

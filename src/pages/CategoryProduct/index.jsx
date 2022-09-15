@@ -22,7 +22,7 @@ const CategoryProduct = () => {
 
   return (
     <Fragment>
-      <section>
+      {/* <section>
         <div className="product-list-category-page">
           <div className="container ">
             <div className="row-new">
@@ -52,7 +52,7 @@ const CategoryProduct = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Fragment>
   );
 };

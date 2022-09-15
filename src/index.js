@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-
 import { BrowserRouter } from "react-router-dom";
 
 import './index.css';
@@ -12,10 +11,10 @@ import { Provider } from 'react-redux';
 import store from "./app/redux/store"
 
 import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-
 
 import 'bootstrap/dist/css/bootstrap.css'
 import "bootstrap/dist/css/bootstrap.min.css";
