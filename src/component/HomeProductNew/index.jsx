@@ -14,7 +14,7 @@ const HomeProductNew = () => {
     dispatch(getHomeProductNew())
   }, [dispatch]);
 
-  console.log(HomeProductNew)
+  // console.log(HomeProductNew)
 
   return (
     <Fragment>
