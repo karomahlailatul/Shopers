@@ -37,10 +37,12 @@ const SearchProduct = () => {
   useEffect(() => {
     if (keywordParam !== null) {
       let valueSender = keyword + value;
-      dispatch(getSearchProduct(valueSender));
+      dispatch(getSearchProduct(valueSender))
+      .unwrap()
     } else {
       let valueSender = value;
-      dispatch(getSearchProduct(valueSender));
+      dispatch(getSearchProduct(valueSender))
+      .unwrap()
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

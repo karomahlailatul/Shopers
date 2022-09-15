@@ -16,13 +16,14 @@ const CategoryProduct = () => {
   // console.log(CategoryProduct);
 
   useEffect(() => {
-    dispatch(getCategoryProduct(name));
+    dispatch(getCategoryProduct(name))
+    .unwrap()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <Fragment>
-      {/* <section>
+      <section>
         <div className="product-list-category-page">
           <div className="container ">
             <div className="row-new">
@@ -52,7 +53,7 @@ const CategoryProduct = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </Fragment>
   );
 };
