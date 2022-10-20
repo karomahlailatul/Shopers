@@ -1,13 +1,12 @@
 import React, { useEffect, useState, Fragment } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/icons/logo-navbar.svg";
 
 import { useDispatch } from "react-redux";
 import { postSignUpUser } from "../../app/redux/Slice/SignUpUserSlice";
 import { postSignUpSeller } from "../../app/redux/Slice/SignUpSellerSlice";
 
-
+import logo from "../../assets/images/icons/logo-navbar.svg";
 
 const UserCreate = () => {
   let navigate = useNavigate();

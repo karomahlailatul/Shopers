@@ -88,7 +88,7 @@ const UserLogin = () => {
               </form>
             </div>
           </div>
-        </div>{" "}
+        </div>
       </div>
     </Fragment>
   );

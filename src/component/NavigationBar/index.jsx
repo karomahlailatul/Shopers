@@ -16,6 +16,8 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
+import PhotoEmpty from "../../assets/images/icons/ico-user.svg"
+
 const NavigationBar = () => {
   const isAuth = localStorage.getItem("token");
 
@@ -113,9 +115,18 @@ const NavigationBar = () => {
 
   const pictureThumbnails = (
     <span>
-      {/* <img className="pictureThumbnails" crossOrigin="anonymous" src={user_picture === null || user_picture === undefined ? PhotoEmpty : user_picture} alt="" /> */}
+      <img className="pictureThumbnails" crossOrigin="anonymous" src={user_picture === null || user_picture === undefined ? PhotoEmpty : user_picture} alt="" />
 
-      <img className="pictureThumbnails" crossOrigin="anonymous" src={user_picture} alt="" />
+      {/* <img className="pictureThumbnails" crossOrigin="anonymous" src={user_picture} alt="" /> */}
+    </span>
+  );
+
+
+  const logoThumbnails = (
+    <span>
+      <img className="pictureThumbnails" crossOrigin="anonymous" src={seller_logo === null || seller_logo === undefined ? PhotoEmpty : seller_logo} alt="" />
+      
+      {/* <img className="pictureThumbnails" crossOrigin="anonymous" src={seller_logo} alt="" /> */}
     </span>
   );
 
@@ -172,27 +183,6 @@ const NavigationBar = () => {
                       {windowSize.innerWidth <= 992 ? (
                         <Fragment>
                           <div className="col-xl-8 col-lg-8">
-                            <Form onSubmit={handleSearchSubmit} className="form-search d-flex">
-                              <div className="col-9 d-flex border border-1 rounded-pill form-input">
-                                <input className="form-control rounded-pill border-0 " type="search" placeholder="Search" aria-label="Search" onChange={handleSearch} />
-                                <Button
-                                  onClick={() => {
-                                    navigate("../product?" + searchParams);
-                                    toggleOffcanvas();
-                                  }}
-                                  className=" bg-transparent border-0 rounded-pill btn-search"
-                                  type="submit"
-                                >
-                                  <img className="" src={require("../../assets/images/icons/search.svg").default} alt="search" />
-                                </Button>
-                              </div>
-                              <div className="col-1 border border-1 rounded-3 d-flex justify-content-center align-items-center block" type="button" data-bs-toggle="modal" data-bs-target="#modalFilter">
-                                <img className="ico" src={require("../../assets/images/icons/filter.svg").default} alt="" />
-                              </div>
-                              <div className="col-2 border border-0 rounded-3 d-flex justify-content-center align-items-center block" type="button">
-                                <img className="ico" src={require("../../assets/images/icons/cart.svg").default} alt="" />
-                              </div>
-                            </Form>
                           </div>
 
                           <div className="d-grid ">
@@ -201,10 +191,8 @@ const NavigationBar = () => {
                                 <img
                                   className="photoSide"
                                   crossOrigin="anonymous"
-                                  // src={(seller_logo === null || seller_logo === undefined ? PhotoEmpty : seller_logo)} alt=""
-                                  src={seller_logo}
-                                  alt=""
-                                />
+                                  src={(seller_logo === null || seller_logo === undefined ? PhotoEmpty : seller_logo)} alt="" 
+                                  />
                               </div>
                               <div className="col-8">
                                 <h5 className="fw-bold text-muted">{user_email}</h5>
@@ -212,10 +200,8 @@ const NavigationBar = () => {
                               </div>
                               <div className="col-2 d-flex ">
                                 <div className="col-6 border border-0 rounded-3 d-flex justify-content-center align-items-center block" type="button">
-                                  <img className="ico" src={require("../../assets/images/icons/bell.svg").default} alt="" />
-                                </div>
+                                 </div>
                                 <div className="col-6 border border-0 rounded-3 d-flex justify-content-center align-items-center block" type="button">
-                                  <img className="ico" src={require("../../assets/images/icons/mail.svg").default} alt="" />
                                 </div>
                               </div>
                             </div>
@@ -269,26 +255,7 @@ const NavigationBar = () => {
                       ) : (
                         <Fragment>
                           <div className="col-xl-10 col-lg-10">
-                            <Form onSubmit={handleSearchSubmit} className="form-search d-flex">
-                              <div className="col-9 d-flex border border-1 rounded-pill form-input">
-                                <input className="form-control rounded-pill border-0 " type="search" placeholder="Search" aria-label="Search" onChange={handleSearch} />
-                                <Button
-                                  onClick={() => {
-                                    navigate("../product?" + searchParams);
-                                  }}
-                                  className=" bg-transparent border-0 rounded-pill btn-search"
-                                  type="submit"
-                                >
-                                  <img className="" src={require("../../assets/images/icons/search.svg").default} alt="search" />
-                                </Button>
-                              </div>
-                              <div className="col-1 border border-1 rounded-3 d-flex justify-content-center align-items-center block" type="button" data-bs-toggle="modal" data-bs-target="#modalFilter">
-                                <img className="ico" src={require("../../assets/images/icons/filter.svg").default} alt="" />
-                              </div>
-                              <div className="col-2 border border-0 rounded-3 d-flex justify-content-center align-items-center block" type="button">
-                                <img className="ico" src={require("../../assets/images/icons/cart.svg").default} alt="" />
-                              </div>
-                            </Form>
+                            
                           </div>
 
                           <div className="col-xl-2 col-lg-2 d-flex">
@@ -301,7 +268,7 @@ const NavigationBar = () => {
                               </div>
                             </div>
                             <div className="col-4 d-flex justify-content-center align-items-center block">
-                              <NavDropdown title={pictureThumbnails} align="end" id={`offcanvasNavbarDropdown-expand-${expand}`}>
+                              <NavDropdown title={logoThumbnails} align="end" id={`offcanvasNavbarDropdown-expand-${expand}`}>
                                 <NavDropdown.Header className="d-grid ">
                                   <p className="mb-0 fw-bold">{user_email} </p>
                                   <p className="mb-0">
@@ -373,7 +340,10 @@ const NavigationBar = () => {
                           <div className="d-grid ">
                             <div className="col-12 d-flex mt-4">
                               <div className="col-2 border border-0 rounded-3 d-flex justify-content-center align-items-center block">
-                                <img className="photoSide" crossOrigin="anonymous" src={user_picture} alt="" />
+                                <img className="photoSide" crossOrigin="anonymous" 
+                                // src={user_picture} alt="" 
+                                src={(user_picture === null || user_picture === undefined ? PhotoEmpty : user_picture)} alt="" 
+                                />
                               </div>
                               <div className="col-8">
                                 <h5 className="fw-bold text-muted">{user_email}</h5>
