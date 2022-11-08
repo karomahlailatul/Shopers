@@ -17,7 +17,7 @@ const RequireAuthSeller = ({ children }) => {
     return <Navigate to="/home" replace="true" />;
   }
   
-  console.log(role)
+  // console.log(role)
   return children;
 };
 

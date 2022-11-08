@@ -16,6 +16,9 @@ import ProfileSellerReducer from "./Slice/ProfileSellerSlice"
 
 import SearchProductReducer from "./Slice/SearchProductSlice"
 
+import ProductByCategoryReducer from "./Slice/ProductByCategorySlice";
+import ProductBySearchReducer from "./Slice/ProductBySearchSlice";
+import ProductBySellerReducer from "./Slice/ProductBySellerSlice";
 
 export default configureStore({
     reducer: {
@@ -31,6 +34,10 @@ export default configureStore({
 
         // ProductBySearch: ProductBySearchReducer,
         // ProductBySeller: ProductBySellerReducer,
+
+        ProductByCategory: ProductByCategoryReducer,
+        ProductBySearch: ProductBySearchReducer,
+        ProductBySeller: ProductBySellerReducer,
 
         SignIn: SignInReducer,
         SignUpUser: SignUpUserReducer,

@@ -115,7 +115,10 @@ const NavigationBar = () => {
 
   const pictureThumbnails = (
     <span>
-      <img className="pictureThumbnails" crossOrigin="anonymous" src={user_picture === null || user_picture === undefined ? PhotoEmpty : user_picture} alt="" />
+      <img className="pictureThumbnails" 
+      // crossOrigin="anonymous" 
+      referrerPolicy="no-referrer"
+      src={user_picture === null || user_picture === undefined ? PhotoEmpty : user_picture} alt="" />
 
       {/* <img className="pictureThumbnails" crossOrigin="anonymous" src={user_picture} alt="" /> */}
     </span>
@@ -124,7 +127,10 @@ const NavigationBar = () => {
 
   const logoThumbnails = (
     <span>
-      <img className="pictureThumbnails" crossOrigin="anonymous" src={seller_logo === null || seller_logo === undefined ? PhotoEmpty : seller_logo} alt="" />
+      <img className="pictureThumbnails" 
+      // crossOrigin="anonymous" 
+      referrerPolicy="no-referrer"
+      src={seller_logo === null || seller_logo === undefined ? PhotoEmpty : seller_logo} alt="" />
       
       {/* <img className="pictureThumbnails" crossOrigin="anonymous" src={seller_logo} alt="" /> */}
     </span>
@@ -190,7 +196,8 @@ const NavigationBar = () => {
                               <div className="col-2 border border-0 rounded-3 d-flex justify-content-center align-items-center block">
                                 <img
                                   className="photoSide"
-                                  crossOrigin="anonymous"
+                                  // crossOrigin="anonymous"
+                                  referrerPolicy="no-referrer"
                                   src={(seller_logo === null || seller_logo === undefined ? PhotoEmpty : seller_logo)} alt="" 
                                   />
                               </div>
@@ -340,7 +347,9 @@ const NavigationBar = () => {
                           <div className="d-grid ">
                             <div className="col-12 d-flex mt-4">
                               <div className="col-2 border border-0 rounded-3 d-flex justify-content-center align-items-center block">
-                                <img className="photoSide" crossOrigin="anonymous" 
+                                <img className="photoSide" 
+                                referrerPolicy="no-referrer"
+                                // crossOrigin="anonymous" 
                                 // src={user_picture} alt="" 
                                 src={(user_picture === null || user_picture === undefined ? PhotoEmpty : user_picture)} alt="" 
                                 />

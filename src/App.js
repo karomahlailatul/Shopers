@@ -12,6 +12,8 @@ import SignIn from "./pages/SignIn";
 
 import ProfileUser from "./pages/ProfileUser";
 
+import ProductDetails from "./pages/ProductDetails";
+import SellerPage from "./pages/SellerPage";
 
 //component
 import ScrollToTop from "./component/ScrollToTop";
@@ -19,6 +21,7 @@ import NavigationBar from "./component/NavigationBar";
 
 import RequireAuth from "./component/RequireAuth";
 
+import RequireAuthSeller from "./component/RequireAuthSeller";
 
 
 //module
@@ -44,7 +47,8 @@ const App = () => {
 
           <Route path="/profile/user" element={<RequireAuth> <ProfileUser /> </RequireAuth>} />
 
-          {/* <Route path="/profile/seller" element={  <RequireAuthSeller> <SellerPage /> </RequireAuthSeller> }/> */}
+          <Route exact path="/product/:id" element={<ProductDetails />} />
+          <Route path="/profile/seller" element={  <RequireAuthSeller> <SellerPage /> </RequireAuthSeller> }/>
         </Routes>
       </ScrollToTop>
       <ToastContainer />

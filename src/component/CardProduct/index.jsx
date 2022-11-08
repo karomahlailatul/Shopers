@@ -13,7 +13,10 @@ const CardProduct = (valueDispatch) => {
           <Card className="container border rounded align-items-center ShadowBox">
             <div key={item.id}>
               <div className="d-flex justify-content-center out-img-product">
-                <img className="img-product" crossOrigin="anonymous" src={item.photo} alt="" />
+                <img className="img-product" 
+                referrerPolicy="no-referrer"
+                // crossOrigin="anonymous" 
+                src={item.photo} alt="" />
               </div>
               <h6 className="text-dark fw-bold title-product ">{item.name}</h6>
               <h6 className="text-danger ">$ {item.price}</h6>
